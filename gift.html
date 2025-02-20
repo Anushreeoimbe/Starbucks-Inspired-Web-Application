@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barista Recommends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 2px solid #ccc;
+        }
+
+        header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #006241;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: #bbb;
+            border-radius: 5px;
+        }
+
+        hr {
+            margin: 0;
+            border: 1px solid #ccc;
+        }
+
+        #img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        #img div {
+            text-align: center;
+        }
+
+        #img img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #img h2 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        #product {
+            padding: 20px;
+        }
+
+        #product h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        #product_child {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        #product_child div {
+            text-align: center;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+
+        #product_child img {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #product_child p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #product_child b {
+            font-size: 16px;
+            color: #006241;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #product_child button {
+            background-color: #006241;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #product_child button:hover {
+            background-color: #004d31;
+        }
+                /* Modal Styles */
+                .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .modal-content input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content button {
+            background-color: #006241;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #004d31;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>STARBUCKS</h2>
+        <nav>
+            <ul>
+                <li><a href="starbucks.htm">Home</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="#" id="payBtn">Pay</a></li>
+                <li><a href="store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="product">
+        <h2>Anytime</h2>
+        <div id="product_child">
+            <div>
+                <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/TSB_GC_indiacard_1_1_28dafb2bb6.png"
+                    alt="">
+                <p>India Exclusive</p>
+                <p>Bring in the festive season and make each celebration memorable</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/71d3780c_be6e_46b1_ab01_8a2bce244a7f_1_1_2d1afadaa0.png"
+                    alt="">
+                <p>Starbucks Coffee</p>
+                <p>Starbucks is best when shared. Treat your pals to a good cup of coffee</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/61c1abaf_3b0f_48af_903e_426c1b9dae41_1_9a59b0ea34.webp"
+                    alt="">
+                <p>Way To Go</p>
+                <p>It's time to celebrate! Show your appreciation with this Starbucks Gift Card.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/0bed73e6_0d8d_48c0_8936_f46d7355a8ad_1_1_2bdef6b475.webp"
+                    alt="">
+                <p>Starbucks</p>
+                <p>Take the moment and make it special with Starbucks</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/eacb11c1_b46b_4105_9c99_e0a60224adaa_1_0464825bb5.png"
+                    alt="">
+                <p>Hang In There</p>
+                <p>Sometimes, company goes a long way. Let your friends know you have their back.</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="product">
+        <h2>Flower Bouquet</h2>
+        <div id="product_child">
+            <div>
+                <img src="https://images.pexels.com/photos/3972697/pexels-photo-3972697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <p>Pink & White flowers</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/30190442/pexels-photo-30190442/free-photo-of-elegant-bouquet-of-red-roses-with-baby-s-breath.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <p>Red Rose </p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/226145/pexels-photo-226145.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <p>Mix Flower Bouquet</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/9879959/pexels-photo-9879959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <p>Bunch of Pink Roses</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/8305326/pexels-photo-8305326.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="">
+                <p>Pink Roses Bouquet</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+</body>
+
+</html>

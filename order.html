@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barista Recommends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 2px solid #ccc;
+        }
+
+        header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #006241;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: #bbb;
+            border-radius: 5px;
+        }
+
+        hr {
+            margin: 0;
+            border: 1px solid #ccc;
+        }
+
+        #img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        #img div {
+            text-align: center;
+        }
+
+        #img img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #img h2 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        #product {
+            padding: 20px;
+        }
+
+        #product h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        #product_child {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        #product_child div {
+            text-align: center;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+
+        #product_child img {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #product_child p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #product_child b {
+            font-size: 16px;
+            color: #006241;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #product_child button {
+            background-color: #006241;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #product_child button:hover {
+            background-color: #004d31;
+        }
+                /* Modal Styles */
+                .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .modal-content input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content button {
+            background-color: #006241;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #004d31;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>STARBUCKS</h2>
+        <nav>
+            <ul>
+                <li><a href="starbucks.htm">Home</a></li>
+                <li><a href="gift.html">Gift</a></li>
+                <li><a href="#">Order</a></li>
+                <li><a href="#" id="payBtn">Pay</a></li>
+                <li><a href="store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="product">
+        <h2>Bestseller</h2>
+        <div id="product_child">
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/116569.webp"
+                    alt="">
+                <p>Pink Drink</p>
+                <p>A vibrant mix of strawberry açaí and coconut flavors, bursti...</p>
+                <b>Rs.350.50</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/105468.webp"
+                    alt="">
+                <p>Cold coffee</p>
+                <p>Our signature rich in flavour espresso blended with delicate..</p>
+                <b>Rs.283.50</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100501.webp"
+                    alt="">
+                <p>Java Chip Frappuccino</p>
+                <p>Mocha sauce and Frappuccino® chips blended with with Frappu...</p>
+                <b>Rs.305.50</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100433.webp"
+                    alt="">
+                <p>Caffe Americano</p>
+                <p>Rich in flavour, full-bodied espresso with hot water in true...</p>
+                <b>Rs.220.50</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/103515.webp"
+                    alt="">
+                <p>Double Chocolate Chip Frappuccino</p>
+                <p>Rich mocha-flavored sauce meets up with chocolaty chips, mil...</p>
+                <b>Rs.350.0</b>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="product">
+        <h2>FOOD</h2>
+        <div id="product_child">
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/104108.webp"
+                    alt="">
+                <p>Chilli Cheese Toast</p>
+                <b>Rs.315.0</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100100_1.webp"
+                    alt="">
+                <p>Paneer Tikka Sandwich</p>
+                <b>Rs.267.67</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115452_1.webp"
+                    alt="">
+                <p>Pesto Veggie Sourdough Sandwich</p>
+                <b>Rs.420.00</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115298_1.webp"
+                    alt="">
+                <p>Tandoori Soya Chaap Wrap</p>
+                <b>Rs.315.00</b>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115454_1.webp"
+                    alt="">
+                <p>Mushroom Cheese Melt Baguette Sandwich</p>
+                <b>Rs.462.00</b>
+                <button>Add to Cart</button>
+            </div>
+    </section id="product">
+    <h2>Non-Veg</h2>
+    <div id="product_child">
+        <div>
+            <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115453_1.webp" alt="">
+            <p>Sriracha Chicken Sourdough Sandwich</p>
+            <b>Rs.430.00</b>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/114057.webp" alt="">
+            <p>Pepper Chicken Wrap</p>
+            <b>Rs.370.50</b>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/114059.webp" alt="">
+            <p>Kosha Mangsho Wrap</p>
+            <b>Rs.397.00</b>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115455_1.webp" alt="">
+            <p>Roast Chicken Baguette Sandwich</p>
+            <b>Rs.467.27</b>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115303_1.webp" alt="">
+            <p>Roast Chicken Multigrain Sandwich</p>
+            <b>Rs.467.00</b>
+            <button>Add to cart</button>
+        </div>
+
+    </div>
+    <section>
+    </section>
+
+</body>
+
+</html>
